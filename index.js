@@ -76,7 +76,8 @@ const copyFiles = (targetDir, resultDir) => {
     if (state.isDirectory()) {
       copyFiles(localBase, resultDir);
     } else {
-      fs.writeFileSync(resultDir + '/' + item[0] + '/' + item, fs.readFileSync(localBase));
+      //fs.writeFileSync(resultDir + '/' + item[0] + '/' + item, fs.readFileSync(localBase));
+      fs.writeFileSync(path.join(resultDir, item[0], item), fs.readFileSync(localBase));
     }
   });
 };
